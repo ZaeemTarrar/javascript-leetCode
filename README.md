@@ -17,7 +17,7 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 ## How to run
 
-```bash
+```shell
 cd ./Easy/Two \Sum/ ; 
 clear ;
 node ./run.js ;
