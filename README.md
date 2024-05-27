@@ -17,13 +17,13 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 Make sure you are not inside any folder.
 
-```powershell
+```ps
 sudo npm install ;
 ```
 
 ## How to run
 
-```powershell
+```ps
 cd ./Easy/Two \Sum/ ; 
 clear ;
 node ./run.js ;
