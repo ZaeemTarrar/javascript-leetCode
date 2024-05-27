@@ -27,16 +27,12 @@ function twoSum(nums, target) {
 ```
 
 <div align="center" >
-<img style="width:70%;" src="image.png" />
+<img style="width:70%;" src="scores/sol1.png" />
 </div>
 
 <br />
 
 **Solution-2:**
-
-- Performance: `0ms`
-- Memory-Usage: `0mb`
-- Acceptance: `0%` 
 
 ```javascript
 function twoSum(nums, target) {
@@ -47,3 +43,9 @@ function twoSum(nums, target) {
   }
 }
 ```
+
+<div align="center" >
+<img style="width:70%;" src="scores/sol2.png" />
+</div>
+
+<br />
