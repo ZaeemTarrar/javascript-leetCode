@@ -17,8 +17,8 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 Make sure you are not inside any folder.
 
-```shell
-npm install ;
+```console
+sudo npm install ;
 ```
 
 ## How to run
