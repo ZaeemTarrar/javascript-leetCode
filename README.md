@@ -17,13 +17,13 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 Make sure you are not inside any folder.
 
-```bash
+```shell
 sudo npm install ;
 ```
 
 ## How to run
 
-```ps
+```shell
 cd ./Easy/Two \Sum/ ; 
 clear ;
 node ./run.js ;
