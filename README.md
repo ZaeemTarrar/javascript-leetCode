@@ -12,3 +12,13 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 ### **Easy:** `5`
 ### **Medium:** `0`
 ### **Hard:** `0`
+
+## Pre-Installation
+
+## How to run
+
+```cmd
+cd ./Easy/Two \Sum/ ; 
+clear ;
+node ./run.js ;
+```
