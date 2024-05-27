@@ -1,6 +1,7 @@
-# <img style="width:100px;" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-had-a-brainstorming-new-idea-to-solve-business-working-problem-8920660-7295528.png" /> LeetCode Problems in JavaScript
+# LeetCode Problems in JavaScript
 
 <div style="text-align:center;" >
+<img style="width:100px;" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-had-a-brainstorming-new-idea-to-solve-business-working-problem-8920660-7295528.png" />
 <img style="width:100px;" src=".github/assets/leetcode.png" >
 <img style="width:100px;" src=".github/assets/js.webp" >
 </div>
