@@ -2,4 +2,4 @@
 
 ## Description
 
-![](.github/assets/ss1.png)
+![description](./../../.github/assets/ss1.png)
