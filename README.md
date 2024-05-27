@@ -1,4 +1,4 @@
-<div style="text-align:center;" >
+<div align="center" >
 <img style="width:100px;" src=".github/assets/leetcode.png" >
 <img style="width:100px;" src=".github/assets/js.webp" >
 </div>
