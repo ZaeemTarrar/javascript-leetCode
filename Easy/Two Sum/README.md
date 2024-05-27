@@ -6,8 +6,6 @@
 <img style="width:70%;" src="./../../.github/assets/ss1.png" />
 </div>
 
-## Explanation
-
 ## Solutions
 
 <br />
