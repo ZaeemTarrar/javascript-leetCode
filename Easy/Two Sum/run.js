@@ -1,8 +1,27 @@
-const Space = require("./space");
-const Speed = require("./speed");
+const Sol1 = require("./solutions/sol1");
+const Sol2 = require("./solutions/sol2");
 
-const Result1 = Space.twoSum([2, 7, 11, 15], 9);
-console.log("Output: ", Result1);
+const testRounds = 1000;
+const inputs = [
+  [[2, 7, 11, 15], 9],
+  [[3, 1, 4, 11], 7],
+];
 
-const Result2 = Speed.twoSum([2, 7, 11, 15], 9);
-console.log("Output: ", Result2);
+function testSolution(solution, log = false) {
+  for (let i = 0; i < inputs.length; i++) {
+    const Result = solution(...inputs[i]);
+    if (log) console.log(`Output[${i}]: `, Result);
+  }
+}
+
+function multiTest(solution, label) {
+  let timeLabel = `${label} -> [${testRounds} rounds]: `;
+  console.time(timeLabel);
+  for (let i = 0; i < testRounds; i++) {
+    testSolution(solution);
+  }
+  console.timeEnd(timeLabel);
+}
+
+multiTest(Sol1.twoSum, "Solution1");
+multiTest(Sol2.twoSum, "Solution2");

@@ -9,6 +9,6 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 ## Problems Solved
 
-### **Easy:** ` 5 `
+### **Easy:** `5`
 ### **Medium:** `0`
 ### **Hard:** `0`
