@@ -28,6 +28,8 @@ function twoSum(nums, target) {
 }
 ```
 
+![score](image.png)
+
 **Solution-2:**
 
 - Performance: `0ms`
