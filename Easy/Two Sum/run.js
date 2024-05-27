@@ -1,6 +1,10 @@
-const { testSolution, multiTest } = require("./../../utils/test");
-const Sol1 = require("./solutions/sol1");
-const Sol2 = require("./solutions/sol2");
+const {
+  testSolution,
+  multiTestOverall,
+  multiTestEach,
+} = require("./../../utils/test");
+const { twoSum: S1 } = require("./solutions/sol1");
+const { twoSum: S2 } = require("./solutions/sol2");
 
 /**
  * Title of the program, that will be display in the console
@@ -12,7 +16,7 @@ const logTitle = "Two Sum";
  * No. of times, the test method is intended to be called.
  * @type {number}
  */
-const testRounds = 10000;
+const testRounds = 1e4;
 
 /**
  * List of arguments as input array for solution functions.
@@ -32,25 +36,25 @@ console.log(`<=== ${logTitle} ===> `);
  * Test with Output Verification
  */
 console.log("\n[UniTest-Solution1]: ");
-testSolution(Sol1.twoSum, inputs, true);
+testSolution(S1, inputs, true);
 console.log("\n[UniTest-Solution2]: ");
-testSolution(Sol2.twoSum, inputs, true);
+testSolution(S2, inputs, true);
 console.log();
 
 /**
- * Uni-Testing
- * Test Configuration: 1 Rounds
- * Solution1: ~ 0.016ms, 0.121mb
- * Solution2: ~ 0.005ms, 0.001mb
+ * Uni-Testing: Recording Max Individual Score
+ * Test Configuration: 10000 Rounds
+ * Solution1: ~ 0.986ms, 0.126mb
+ * Solution2: ~ 0.135ms, 0.068mb
  */
-multiTest(Sol1.twoSum, inputs, false, "Solution1", 1);
-multiTest(Sol2.twoSum, inputs, false, "Solution2", 1);
+multiTestEach(S1, inputs, false, "Solution1", testRounds);
+multiTestEach(S2, inputs, false, "Solution2", testRounds);
 
 /**
- * Multi-Testing
+ * Multi-Testing: Recoding Overall Scores
  * Test Configuration: 10000 Rounds
- * Solution1: ~ 8.075ms, 0mb
- * Solution2: ~ 1.272ms, 0.729mb
+ * Solution1: ~ 0.671ms, 0.197mb
+ * Solution2: ~ 0.355ms, 0.009mb
  */
-multiTest(Sol1.twoSum, inputs, false, "Solution1", testRounds);
-multiTest(Sol2.twoSum, inputs, false, "Solution2", testRounds);
+multiTestOverall(S1, inputs, false, "Solution1", testRounds);
+multiTestOverall(S2, inputs, false, "Solution2", testRounds);

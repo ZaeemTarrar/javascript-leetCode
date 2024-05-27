@@ -3,7 +3,7 @@
 ## Description
 
 <div align="center" >
-<img style="width:70%;" src="./../../.github/assets/ss1.png" />
+<img style="width:70%;" src="./assets/ss1.png" />
 </div>
 
 ## Solutions
@@ -25,7 +25,7 @@ function twoSum(nums, target) {
 ```
 
 <div align="center" >
-<img style="width:70%;" src="scores/sol1.png" />
+<img style="width:70%;" src="assets/sol1.png" />
 </div>
 
 <br />
@@ -43,7 +43,7 @@ function twoSum(nums, target) {
 ```
 
 <div align="center" >
-<img style="width:70%;" src="scores/sol2.png" />
+<img style="width:70%;" src="assets/sol2.png" />
 </div>
 
 <br />

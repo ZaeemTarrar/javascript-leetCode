@@ -1,10 +1,12 @@
 /**
  * Converts bytes to mega bytes
  * @param {number} bytes - Any value in bytes
- * @returns {string} "123 MB"
+ * @returns {number} 1.234
  */
 const bytesToMegaBytes = (bytes) => {
-  return `${bytes * 1e-6} MB`;
+  return bytes * 1e-6 < 0
+    ? (0).toFixed(3)
+    : (bytes * 1e-6).toFixed(3);
 };
 
 /**
@@ -15,7 +17,7 @@ const bytesToMegaBytes = (bytes) => {
  * @returns {{
  *    rss: string,
  *    heapTotal: string,
- *    heapUsage: string,
+ *    heapUsed: string,
  *    external: string,
  * }}
  */
@@ -37,7 +39,12 @@ const memUsageDiffInMb = (mem1, mem2) => {
  * @param {string} preText - Addon to solution output (optional)
  * @return {void}
  */
-function testSolution(solution, inputs = [], log = false, preText = "") {
+function testSolution(
+  solution,
+  inputs = [],
+  log = false,
+  preText = ""
+) {
   for (let i = 0; i < inputs.length; i++) {
     const Result = solution(...inputs[i]);
     if (log) console.log(`${preText}Output[${i}]: `, Result);
@@ -47,6 +54,8 @@ function testSolution(solution, inputs = [], log = false, preText = "") {
 /**
  * Takes your solution and tests it multiple times with
  * the given input/inputs, in accordance to the number of rounds.
+ * It records overall speed and memory used by the entire test
+ * run loop.
  * @param {function} solution
  * @param {array} inputs
  * @param {boolean} log - Displays solution outputs
@@ -54,25 +63,125 @@ function testSolution(solution, inputs = [], log = false, preText = "") {
  * @param {number} rounds - No. of times, method if to be tested
  * @return {void}
  */
-function multiTest(
+function multiTestOverall(
   solution,
   inputs = [],
   log = false,
   label = "Solution",
   rounds = 1
 ) {
-  const mem1 = process.memoryUsage();
-  if (log) console.log(`=> ${label}:`);
+  if (log) console.log(`=> [Overall] ${label}:`);
   const start = performance.now();
+  const mem1 = process.memoryUsage();
   for (let i = 0; i < rounds; i++) {
-    testSolution(solution, inputs, log, `[${i}] -> `);
+    testSolution(
+      solution,
+      inputs[Math.floor(Math.round() * inputs.length)],
+      log,
+      `[${i}] -> `
+    );
   }
   const end = performance.now();
   const mem2 = process.memoryUsage();
-  console.log(`${label} [${rounds} rounds]: `);
-  console.log(`-> Performance: ${(end - start).toFixed(3)}ms`);
-  console.log(`-> Memory Usage: `, memUsageDiffInMb(mem1, mem2));
+  const memStats = memUsageDiffInMb(mem1, mem2);
+  console.log(
+    `[Overall] ${label} (${rounds} rounds): `,
+    {
+      speed: (end - start).toFixed(3) + " ms",
+    },
+    {
+      memory: {
+        rs: memStats.rss + " mb",
+        h: memStats.heapTotal + " mb",
+        hu: memStats.heapUsed + " mb",
+        ext: memStats.external + " mb",
+      },
+    }
+  );
   console.log();
 }
 
-module.exports = { testSolution, multiTest };
+/**
+ * Takes your solution and tests it multiple times with
+ * the given input/inputs, in accordance to the number of rounds.
+ * It records the maximum speed and memory used by all the
+ * test runs individually.
+ * @param {function} solution
+ * @param {array} inputs
+ * @param {boolean} log - Displays solution outputs
+ * @param {string} label - Title for the solution test
+ * @param {number} rounds - No. of times, method if to be tested
+ * @return {void}
+ */
+function multiTestEach(
+  solution,
+  inputs = [],
+  log = false,
+  label = "Solution",
+  rounds = 1
+) {
+  if (log) console.log(`=> [Individual] ${label}:`);
+  let maxMem = { rss: 0, heapTotal: 0, heapUsed: 0, external: 0 };
+  let minMem = {
+    rss: Infinity,
+    heapTotal: Infinity,
+    heapUsed: Infinity,
+    external: Infinity,
+  };
+  let maxSpeed = 0;
+  let minSpeed = Infinity;
+  for (let i = 0; i < rounds; i++) {
+    const inputIndex = Math.floor(Math.round() * inputs.length);
+    const mem1 = process.memoryUsage();
+    const start = performance.now();
+    testSolution(solution, inputs[inputIndex], log, `[${i}] -> `);
+    const end = performance.now();
+    const mem2 = process.memoryUsage();
+    if (end - start > maxSpeed) maxSpeed = end - start;
+    if (end - start < minSpeed) minSpeed = end - start;
+    const memStats = memUsageDiffInMb(mem1, mem2);
+    if (memStats.rss > maxMem.rss) maxMem.rss = memStats.rss;
+    if (memStats.heapTotal > maxMem.heapTotal)
+      maxMem.heapTotal = memStats.heapTotal;
+    if (memStats.heapUsed > maxMem.heapUsed)
+      maxMem.heapUsed = memStats.heapUsed;
+    if (memStats.external > maxMem.external)
+      maxMem.external = memStats.external;
+
+    if (memStats.rss < minMem.rss) minMem.rss = memStats.rss;
+    if (memStats.heapTotal < minMem.heapTotal)
+      minMem.heapTotal = memStats.heapTotal;
+    if (memStats.heapUsed < minMem.heapUsed)
+      minMem.heapUsed = memStats.heapUsed;
+    if (memStats.external < minMem.external)
+      minMem.external = memStats.external;
+  }
+  console.log(
+    `[Individual] ${label} (${rounds} rounds): `,
+    {
+      speed: {
+        min: minSpeed.toFixed(3) + " ms",
+        max: maxSpeed.toFixed(3) + " ms",
+      },
+    },
+    {
+      memory: {
+        min: {
+          rs: minMem.rss + " mb",
+          h: minMem.heapTotal + " mb",
+          hu: minMem.heapUsed + " mb",
+          ext: minMem.external + " mb",
+        },
+        max: {
+          rs: maxMem.rss + " mb",
+          h: maxMem.heapTotal + " mb",
+          hu: maxMem.heapUsed + " mb",
+          ext: maxMem.external + " mb",
+        },
+      },
+    }
+  );
+  console.log();
+}
+
+module.exports = { testSolution, multiTestOverall, multiTestEach };

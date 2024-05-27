@@ -1,9 +1,3 @@
-/*
- * Solution Details:
- *  Best LeetCode Speed: ~ 98ms
- *  Best LeetCode Memory Usage: ~ 49.02mb
- */
-
 /**
  * Returns back an array with a pair of numbers,
  * the sum of which is equal to the given target
