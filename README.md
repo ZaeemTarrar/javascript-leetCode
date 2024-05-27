@@ -15,6 +15,12 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 ## Pre-Installation
 
+Make sure you are not inside any folder.
+
+```ps
+npm install ;
+```
+
 ## How to run
 
 ```ps
