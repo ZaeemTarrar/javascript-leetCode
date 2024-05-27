@@ -8,7 +8,7 @@
 
 ## Explanation
 
-## Solution
+## Solutions
 
 **Solution-1:**
 
@@ -29,6 +29,10 @@ function twoSum(nums, target) {
 ```
 
 **Solution-2:**
+
+- Performance: `0ms`
+- Memory-Usage: `0mb`
+- Acceptance: `0%` 
 
 ```javascript
 function twoSum(nums, target) {
