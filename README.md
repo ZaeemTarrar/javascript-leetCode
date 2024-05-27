@@ -13,6 +13,12 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 ### **Medium:** `0`
 ### **Hard:** `0`
 
+## Tech-Info
+
+Node: `v22.1.0`
+
+NPM: `10.7.0`
+
 ## Pre-Installation
 
 Make sure you are not inside any folder.
