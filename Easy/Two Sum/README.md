@@ -10,11 +10,9 @@
 
 ## Solutions
 
-**Solution-1:**
+<br />
 
-- Performance: `0ms`
-- Memory-Usage: `0mb`
-- Acceptance: `0%` 
+**Solution-1:**
 
 ```javascript
 function twoSum(nums, target) {
@@ -28,7 +26,11 @@ function twoSum(nums, target) {
 }
 ```
 
-![score](image.png)
+<div align="center" >
+<img style="width:70%;" src="image.png" />
+</div>
+
+<br />
 
 **Solution-2:**
 
