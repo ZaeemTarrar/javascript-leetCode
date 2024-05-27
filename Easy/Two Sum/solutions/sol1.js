@@ -1,7 +1,7 @@
 /*
  * Solution Details:
- *  Best LeetCode Speed: 43ms
- *  Best LeetCode Memory Usage: 51.02mb
+ *  Best LeetCode Speed: ~ 43ms
+ *  Best LeetCode Memory Usage: ~ 51.02mb
  */
 
 /**
