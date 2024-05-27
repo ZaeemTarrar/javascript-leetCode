@@ -2,7 +2,9 @@
 
 ## Description
 
-![description](./../../.github/assets/ss1.png)
+<div align="center" >
+<img style="width:50%;" src="./../../.github/assets/ss1.png" />
+</div>
 
 ## Explanation
 
