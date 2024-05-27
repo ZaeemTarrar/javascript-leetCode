@@ -1,4 +1,4 @@
-# LeetCode Problems in JavaScript
+# 💡 LeetCode Problems in JavaScript
 
 <div style="text-align:center;" >
 <img style="width:100px;" src=".github/assets/leetcode.png" >
