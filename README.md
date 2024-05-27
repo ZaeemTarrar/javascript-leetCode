@@ -17,7 +17,7 @@ LeetCode problems solved in JavaScript, optimized for the best performance and m
 
 Make sure you are not inside any folder.
 
-```cmd
+```terminal
 sudo npm install ;
 ```
 
