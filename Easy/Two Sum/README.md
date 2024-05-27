@@ -12,9 +12,9 @@
 
 **Solution-1:**
 
-Performance: `0ms`
-Memory-Usage: `0mb`
-Acceptance: `0%` 
+- Performance: `0ms`
+- Memory-Usage: `0mb`
+- Acceptance: `0%` 
 
 ```javascript
 function twoSum(nums, target) {
