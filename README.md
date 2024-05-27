@@ -40,9 +40,15 @@ sudo npm install ;
 
 ## How to run
 
+Go to the solution directory
+
 ```sh
 cd ./Easy/Two \Sum/ ; 
-clear ;
+```
+
+Run solution as follows
+
+```sh
 node ./run.js ;
 ```
 
