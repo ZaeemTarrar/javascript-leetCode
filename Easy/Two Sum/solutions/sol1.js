@@ -1,7 +1,15 @@
 /*
- * Details:
+ * Solution Details:
  *  Best LeetCode Speed: 43ms
  *  Best LeetCode Memory Usage: 51.02mb
+ */
+
+/**
+ * Returns back an array with a pair of numbers,
+ * the sum of which is equal to the given target
+ * @param {array<number>} nums
+ * @param {number} target
+ * @returns {array<number>}
  */
 function twoSum(nums, target) {
   let myMap = [];
