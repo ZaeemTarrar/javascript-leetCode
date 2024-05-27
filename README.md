@@ -1,4 +1,4 @@
-# <img style="width:50px;" src="https://cdni.iconscout.com/illustration/premium/thumb/businessman-had-a-brainstorming-new-idea-to-solve-business-working-problem-8920660-7295528.png" /> LeetCode Problems in JavaScript
+# <img style="width:50px;" src="https://static-00.iconduck.com/assets.00/light-bulb-emoji-676x1024-9a89i8im.png" /> LeetCode Problems in JavaScript
 
 <div style="text-align:center;" >
 <img style="width:100px;" src=".github/assets/leetcode.png" >
