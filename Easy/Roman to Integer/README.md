@@ -39,6 +39,11 @@ function romanToInt(s) {
 **Solution-2:**
 
 ```javascript
+/**
+ * Converts string of any Roman number into a digital number.
+ * @param {string} s - String of any Roman number
+ * @returns {number} Roman number string converted into a digital number
+ */
 function romanToInt(s) {
   const ROMANS = {
     I: 1,
