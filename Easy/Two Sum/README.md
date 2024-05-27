@@ -3,7 +3,7 @@
 ## Description
 
 <div align="center" >
-<img style="width:50%;" src="./../../.github/assets/ss1.png" />
+<img style="width:70%;" src="./../../.github/assets/ss1.png" />
 </div>
 
 ## Explanation
