@@ -1,4 +1,13 @@
-// => 47ms, 49.38mb
+/**
+ * Function: IsPalindrome
+ * @description Validates if a Number is Palindrome
+ * @param {number} x - Any Number
+ * @returns {boolean}
+ * @example
+ *  isPalindrome(-121); // false
+ *  isPalindrome(10); // false
+ *  isPalindrome(121); // true
+ */
 function isValid(s) {
   if (s.length % 2 != 0) return false;
   let X = [];
