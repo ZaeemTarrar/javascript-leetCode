@@ -2,34 +2,80 @@
 
 ## Description
 
-Given an integer x, return true if x is a palindrome, and false otherwise.
+<div align="center" >
+<img style="width:70%;" src="./assets/ss1.png" />
+</div>
 
-### Example 1:
+## Solutions
 
-**Input:** x = 121
+<br />
 
-**Output:** true
+**Solution-1:**
 
-**Explanation:** 121 reads as 121 from left to right and from right to left.
+```javascript
+/**
+ * Function: IsPalindrome
+ * @description Validates if a Number is Palindrome
+ * @performance ~ 98ms
+ * @memory ~ 57mb
+ * @param {number} x - Any Number
+ * @returns {boolean}
+ * @example
+ *  isPalindrome(-121); // false
+ *  isPalindrome(10); // false
+ *  isPalindrome(121); // true
+ */
+function isPalindrome(x) {
+  if (x < 0) return false;
+  else if (x < 10) return true;
+  else {
+    let x2 = x,
+      rNum = 0;
+    do rNum = rNum * 10 + (x % 10);
+    while ((x = Math.floor(x / 10)) != 0);
+    return x2 == rNum;
+  }
+}
+```
 
-### Example 2:
+<div align="center" >
+<img style="width:70%;" src="assets/sol1.png" />
+</div>
 
-**Input:** x = -121
+<br />
 
-**Output:** false
+**Solution-2:**
 
-**Explanation:** From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.
+```javascript
+/**
+ * Function: IsPalindrome
+ * @description Validates if a Number is Palindrome
+ * @performance ~ 98ms
+ * @memory ~ 57mb
+ * @param {number} x - Any Number
+ * @returns {boolean}
+ * @example
+ *  isPalindrome(-121); // false
+ *  isPalindrome(10); // false
+ *  isPalindrome(121); // true
+ */
+function isPalindrome(x) {
+  if (x < 0) return false;
+  else if (x < 10) return true;
+  else {
+    let x2 = x;
+    let rNum = 0;
+    while (x != 0) {
+      rNum = rNum * 10 + (x % 10);
+      x = Math.floor(x / 10);
+    }
+    return x2 == rNum;
+  }
+}
+```
 
-### Example 3:
+<div align="center" >
+<img style="width:70%;" src="assets/sol2.png" />
+</div>
 
-**Input:** x = 10
-
-**Output:** false
-
-**Explanation:** Reads 01 from right to left. Therefore it is not a palindrome.
-
-### Constraints:
-
-- -231 <= x <= 231 - 1
-
-**Follow up:** Could you solve it without converting the integer to a string?
+<br />
