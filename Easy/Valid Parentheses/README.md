@@ -46,9 +46,3 @@ function isValid(s) {
 </div>
 
 <br />
-
-<div align="center" >
-<img style="width:70%;" src="assets/sol2.png" />
-</div>
-
-<br />
