@@ -1,8 +1,6 @@
 /**
  * Function: IsPalindrome
  * @description Validates if a Number is Palindrome
- * @performance ~ 98ms
- * @memory ~ 57mb
  * @param {number} x - Any Number
  * @returns {boolean}
  * @example
