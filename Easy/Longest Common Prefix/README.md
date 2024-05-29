@@ -2,26 +2,65 @@
 
 ## Description
 
-Write a function to find the longest common prefix string amongst an array of strings.
+<div align="center" >
+<img style="width:70%;" src="./assets/ss1.png" />
+</div>
 
-If there is no common prefix, return an empty string "".
+## Solutions
 
-### Example 1:
+<br />
 
-**Input:** strs = ["flower","flow","flight"]
+**Solution-1:**
 
-**Output:** "fl"
+```javascript
+/**
+ * Function: longestCommonPrefix
+ * @description Finds the longest common prefix among all
+ *  the strings in the array
+ * @param {array<string>} strs - List of Strings/Words
+ * @returns {string} Longest common prefix string found
+ * @example
+ *  longestCommonPrefix(["flower","flow","flight"]);
+ */
+function longestCommonPrefix(strs) {
+  let F = strs[0];
+  let i = 1;
+  while (i++ < strs.length)
+    while (strs[i - 1].indexOf(F) != 0) F = F.slice(0, F.length - 1);
+  return F;
+}
+```
 
-### Example 2:
+<div align="center" >
+<img style="width:70%;" src="assets/sol1.png" />
+</div>
 
-**Input:** strs = ["dog","racecar","car"]
+<br />
 
-**Output:** ""
+**Solution-2:**
 
-**Explanation:** There is no common prefix among the input strings.
+```javascript
+/**
+ * Function: longestCommonPrefix
+ * @description Finds the longest common prefix among all
+ *  the strings in the array
+ * @param {array<string>} strs - List of Strings/Words
+ * @returns {string} Longest common prefix string found
+ * @example
+ *  longestCommonPrefix(["flower","flow","flight"]);
+ */
+function longestCommonPrefix(strs) {
+  let F = strs[0];
+  let i = 1;
+  while (i++ < strs.length)
+    while (strs[i - 1].indexOf(F) != 0)
+      F = F.substring(0, F.length - 1);
+  return F;
+}
+```
 
-### Constraints:
+<div align="center" >
+<img style="width:70%;" src="assets/sol2.png" />
+</div>
 
-- 1 <= strs.length <= 200
-- 0 <= strs[i].length <= 200
-- strs[i] consists of only lowercase English letters.
+<br />
